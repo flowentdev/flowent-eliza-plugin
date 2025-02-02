@@ -1,0 +1,22 @@
+{
+    "name": "@elizaos/plugin-flowent",
+    "version": "0.1.8-alpha.1",
+    "main": "dist/index.js",
+    "type": "module",
+    "types": "dist/index.d.ts",
+    "dependencies": {
+        "@elizaos/core": "workspace:*",
+        "axios": "^1.6.7",
+        "tsup": "^8.3.5",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "tsup": "8.3.5"
+    },
+    "scripts": {
+        "build": "tsup --format esm --dts",
+        "dev": "tsup --format esm --dts --watch",
+        "lint": "eslint --fix  --cache ."
+    }
+}

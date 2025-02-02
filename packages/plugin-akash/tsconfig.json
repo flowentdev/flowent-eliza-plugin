@@ -1,0 +1,39 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "dist",
+        "rootDir": "src",
+        "module": "ESNext",
+        "target": "ESNext",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "moduleResolution": "Bundler",
+        "allowImportingTsExtensions": true,
+        "emitDeclarationOnly": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "declaration": true,
+        "sourceMap": true,
+        "types": [
+            "vitest/globals",
+            "node",
+            "jest"
+        ],
+        "baseUrl": ".",
+        "preserveSymlinks": true
+    },
+    "include": [
+        "src/**/*",
+        "test/actions/getDeploymentApi.test.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "test",
+        "../../packages/core/**/*"
+    ]
+}

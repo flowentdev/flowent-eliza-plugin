@@ -1,0 +1,15 @@
+{
+    "extends": "../core/tsconfig.json",
+    "compilerOptions": {
+        "outDir": "dist",
+        "rootDir": "src",
+        "types": [
+            "node"
+        ],
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ]
+}
