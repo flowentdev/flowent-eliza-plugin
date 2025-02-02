@@ -1,6 +1,6 @@
 # Flowent Eliza Plugin 🌐⚡
 
-[![![Eliza Compatible](https://img.shields.io/badge/ElizaOS-Plugin%20Ready-7C3AED)](https://elizaos.com)
+[![Eliza Compatible](https://img.shields.io/badge/ElizaOS-Plugin%20Ready-7C3AED)](https://elizaos.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Flowent X](https://img.shields.io/badge/Flowent-%40flowentdev-1DA1F2)](https://x.com/flowentdev)
 [![Flowent Docs](https://img.shields.io/badge/Docs-GitBook-FF9B00)](https://docs.flowent.dev)
