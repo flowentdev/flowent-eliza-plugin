@@ -9,20 +9,21 @@ import {
 } from "@elizaos/core";
 import { FlowentService } from '../services';
 import { validateFlowentConfig } from "../environment";
-import { FlowentQuery, FlowentResponse } from "../types";
+import { FlowentResponse } from "../types";
 import { getInsightFlowExamples } from "../examples";
 
 export const getInsightFlowAction: Action = {
-  name: "FLOWENT_GET_DATA_FUSION",
+  name: "FLOWENT_GET_INSIGHT_FLOW",
   similes: [
       "FLOWENT",
       "DATA FUSION",
       "UNIFIED DATA",
       "AGGREGATED INSIGHTS",
-      "CROSS-SOURCE ANALYSIS"
+      "CROSS-SOURCE ANALYSIS",
+      "GET INSIGHTS"
   ],
   description: "Retrieve unified data insights from multiple sources through Flowent's AI-powered data fusion",
-  validate: async (runtime: IAgentRuntime) => {
+  validate: async (runtime: IAgentRuntime, message: Memory) => {
       await validateFlowentConfig(runtime);
       return true;
   },
@@ -41,19 +42,8 @@ export const getInsightFlowAction: Action = {
             throw new Error("No query provided in message content");
         }
 
-        // Construct the full query object
-        const query: FlowentQuery = {
-            prompt: userQuery,
-            context: {
-                userType: state.user?.type || 'general', // Extract user type from state
-                preferences: state.user?.preferences || {} // Extract preferences from state
-            },
-            freshness: 'realtime', // Default to realtime
-            maxSources: 5 // Default to 5 sources
-        };
-
         // Call the service with the API key and query
-        const response = await FlowentService.unifiedQuery(config.FLOWENT_API_KEY, query);
+        const response = await FlowentService.unifiedQuery(config.FLOWENT_API_KEY, userQuery);
 
         elizaLogger.success(
             `Successfully fetched data from ${response.metadata.sources.length} sources`
@@ -61,9 +51,9 @@ export const getInsightFlowAction: Action = {
 
         if (callback) {
             callback({
-                text: `Flowent Data Fusion Result:\n${response.summary}`,
+                text: `Flowent Data Fusion Result:\n${response.insight}`,
                 content: {
-                    rawData: response.rawData,
+                    structured: response.structured,
                     metadata: response.metadata
                 }
             });
@@ -75,7 +65,7 @@ export const getInsightFlowAction: Action = {
         
         if (callback) {
             callback({
-                text: `Failed to retrieve unified data: ${error.message}`,
+                text: `Failed to retrieve unified insight: ${error.message}`,
                 content: { 
                     error: error.message,
                     retryable: error.retryable || false

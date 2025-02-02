@@ -12,7 +12,7 @@ export const getInsightFlowExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "Let me analyze data from multiple sources to give you a comprehensive view.",
-                action: "FLOWENT_GET_DATA_FUSION",
+                action: "FLOWENT_GET_INSIGHT_FLOW",
             },
         }
     ],
@@ -27,7 +27,7 @@ export const getInsightFlowExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll gather real-time data from exchanges, social media, and blockchain analytics.",
-                action: "FLOWENT_GET_DATA_FUSION",
+                action: "FLOWENT_GET_INSIGHT_FLOW",
             },
         }
     ],
@@ -42,7 +42,7 @@ export const getInsightFlowExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "Let me fetch unified data from trading platforms and social networks.",
-                action: "FLOWENT_GET_DATA_FUSION",
+                action: "FLOWENT_GET_INSIGHT_FLOW",
             },
         }
     ],
@@ -57,7 +57,7 @@ export const getInsightFlowExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "I'll aggregate data from multiple blockchains and analytics platforms.",
-                action: "FLOWENT_GET_DATA_FUSION",
+                action: "FLOWENT_GET_INSIGHT_FLOW",
             },
         }
     ],
@@ -72,7 +72,7 @@ export const getInsightFlowExamples: ActionExample[][] = [
             user: "{{agent}}",
             content: {
                 text: "Let me analyze data from marketplaces, social media, and blockchain activity.",
-                action: "FLOWENT_GET_DATA_FUSION",
+                action: "FLOWENT_GET_INSIGHT_FLOW",
             },
         }
     ]

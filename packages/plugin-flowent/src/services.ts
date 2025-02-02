@@ -1,17 +1,14 @@
 import axios from 'axios';
-import { FlowentResponse, FlowentQuery } from './types';
+import { FlowentResponse } from './types';
 
 export class FlowentService {
   private static readonly BASE_URL = 'https://api.flowent.com/v1';
 
-  static async unifiedQuery(apiKey: string, query: FlowentQuery): Promise<FlowentResponse> {
+  static async unifiedQuery(apiKey: string, query: string): Promise<FlowentResponse> {
     try {
       // Construct the request payload with all parameters
       const payload = {
-        query: query.prompt,
-        context: query.context || {}, // Default to empty object if not provided
-        maxSources: query.maxSources || 5, // Default to 5 sources if not provided
-        freshness: query.freshness || 'realtime' // Default to realtime if not provided
+        query: query,
       };
 
       const response = await axios.post<FlowentResponse>(
