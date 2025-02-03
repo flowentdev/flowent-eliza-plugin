@@ -46,16 +46,12 @@ export const getInsightFlowAction: Action = {
         const response = await FlowentService.unifiedQuery(config.FLOWENT_API_KEY, userQuery);
 
         elizaLogger.success(
-            `Successfully fetched data from ${response.metadata.sources.length} sources`
+            `Successfully fetched data from ${response.metadata.sources.length} sources: ${response}`
         );
 
         if (callback) {
             callback({
-                text: `Flowent Data Fusion Result:\n${response.insight}`,
-                content: {
-                    structured: response.structured,
-                    metadata: response.metadata
-                }
+                text: `{response.insight}`
             });
         }
 
