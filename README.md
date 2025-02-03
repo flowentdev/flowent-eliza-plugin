@@ -54,29 +54,8 @@ npm install @elizaos/plugin-flowent
    ```typescript
    import { flowentPlugin } from '@flowent/eliza-plugin';
    
-   Eliza.registerPlugin(flowentPlugin);
+   runtime.registerPlugin(flowentPlugin);
    ```
-
----
-
-## Usage 🚀
-
-```typescript
-// Fetch unified data from multiple sources  
-const response = await flowentPlugin.actions[0].handler({  
-  query: "ETH price with social sentiment and holder distribution",  
-});  
-
-// Log the summarized insight  
-console.log(response.summary);  
-
-// Iterate through the structured data dynamically  
-if (response.structured) {  
-  Object.keys(response.structured).forEach((key) => {  
-    console.log(`${key}:`, response.structured[key]);  
-  });  
-}  
-```
 
 ---
 
