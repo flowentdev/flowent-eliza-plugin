@@ -70,6 +70,7 @@ npm install @elizaos/plugin-flowent
 
 ---
 ## Response Examples 📤
+Note: The response your Eliza AI Agent will send is just the `insight`.
 
 ```json
 {
