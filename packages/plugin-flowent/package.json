@@ -1,5 +1,5 @@
 {
-    "name": "@elizaos/plugin-flowent",
+    "name": "plugin-flowents",
     "version": "0.1.8-alpha.1",
     "main": "dist/index.js",
     "type": "module",
