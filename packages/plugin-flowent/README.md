@@ -35,7 +35,7 @@ With these capabilities, you can access, interpret, and act on blockchain data f
 ## Installation ⚙️
 
 ```bash
-npm install @elizaos/plugin-flowent
+npm i plugin-flowents
 ```
 
 ---
